@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'dm-font': ["font-family: 'DM Sans', sans-serif"]
+        'dm-font': ["'DM Sans', sans-serif"],
+        'playfair':["'Playfair Display', serif"]
+
       },
     },
   },

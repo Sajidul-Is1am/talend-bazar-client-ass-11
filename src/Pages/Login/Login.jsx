@@ -4,11 +4,12 @@ import "./Login.css";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import Navbar from "../../Shared/Navbar/Navbar";
 
 const Login = () => {
   const { handleRegistraionInGoogle, handleLogin } = useContext(AuthContext);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
@@ -16,17 +17,17 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     // console.log( email, password);
-    
+
     // login with email and password
     handleLogin(email, password)
-      .then(res => {
+      .then((res) => {
         console.log(res.user);
         toast.success("Successfully Login!");
         navigate("/");
       })
-      .catch(error => {
-      console.log(error.message)
-    })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   // registratin with google
@@ -35,8 +36,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.data);
         toast.success("Successfully Login!");
-        navigate('/')
-        
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -46,6 +46,9 @@ const Login = () => {
 
   return (
     <div className="backgroundImg">
+      <div className="bg-gray-600">
+        <Navbar></Navbar>
+      </div>
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col ">
           <div className="text-center">
