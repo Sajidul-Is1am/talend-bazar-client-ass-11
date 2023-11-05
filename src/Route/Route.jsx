@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import AddJob from "../Pages/AddJob/AddJob";
 
 const Route = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const Route = createBrowserRouter([
       {
         path: '/register',
         element:<Registration></Registration>
+      },
+      {
+        path: '/add-job',
+        element:<AddJob></AddJob>
       }
     ],
   },

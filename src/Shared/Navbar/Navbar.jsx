@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import './Navbar.css'
 
 const Navbar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
@@ -24,7 +25,7 @@ const Navbar = () => {
 
   const navlink = (
     <>
-      <div className="lg:flex lg:flex-row lg:gap-10 gap-y-4 grid py-4">
+      <div className="lg:flex lg:flex-row lg:gap-10 gap-y-4 grid py-4 font-semibold">
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
