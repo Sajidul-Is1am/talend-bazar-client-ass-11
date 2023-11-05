@@ -1,7 +1,27 @@
-.bannerImg{
+.bannerImg {
     background: url('https://i.ibb.co/Rc2rMwZ/home-2-bg.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
 }
+
+/* .Banner_img_effect {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 540px;
+}
+
+.Banner_img_effect img {
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+
+.Banner_img_effect:hover img {
+    transform: scale(1.1);
+} */

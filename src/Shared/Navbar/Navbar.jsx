@@ -24,7 +24,7 @@ const Navbar = () => {
 
   const navlink = (
     <>
-      <div className="lg:flex lg:flex-row lg:gap-10">
+      <div className="lg:flex lg:flex-row lg:gap-10 gap-y-4 grid py-4">
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>

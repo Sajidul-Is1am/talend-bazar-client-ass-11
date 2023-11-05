@@ -3,6 +3,7 @@ import "./Registration.css";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import Navbar from "../../Shared/Navbar/Navbar";
 const Registration = () => {
   const navigate = useNavigate()
 
@@ -33,6 +34,9 @@ const Registration = () => {
 
   return (
     <div className="backgroundImg">
+      <div className="bg-gray-600">
+        <Navbar></Navbar>
+      </div>
       <div className="hero min-h-screen ">
         <div className="hero-content flex-col ">
           <div className="text-center">
