@@ -9,6 +9,7 @@ import JobDetails from "../Pages/Home/JobDetails/JobDetails";
 import MyBids from "../Pages/MyBids/MyBids";
 import BidRequest from "../Pages/BidRequest/BidRequest";
 import ErrorPage from "../Pages/Registration/ErrorPage";
+import MyPostupdate from "../Pages/MyPostupdate/MyPostupdate";
 
 const Route = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const Route = createBrowserRouter([
         path: "/bid-request",
         element: <BidRequest></BidRequest>,
       },
+      {
+        path: "/update/:id",
+        element:<MyPostupdate></MyPostupdate>
+      }
     ],
   },
 ]);

@@ -33,7 +33,8 @@ const AddJob = () => {
       const maximumprice = form.maximumprice.value;
       const description = form.description.value;
 
-      const jobInfo = { email, jobtitle, deadline, minimumprcie, maximumprice, description, catagory }
+    const jobInfo = { email, jobtitle, deadline, minimumprcie, maximumprice, description, catagory }
+    console.log(jobInfo);
       //   heating for post data on database this joninfo set on database that's why this feacthing
       axios.post("http://localhost:5001/addjob", jobInfo)
           .then(res => {
