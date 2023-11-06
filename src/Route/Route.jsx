@@ -8,11 +8,13 @@ import MyPostedJob from "../Pages/MyPostedJob/MyPostedJob";
 import JobDetails from "../Pages/Home/JobDetails/JobDetails";
 import MyBids from "../Pages/MyBids/MyBids";
 import BidRequest from "../Pages/BidRequest/BidRequest";
+import ErrorPage from "../Pages/Registration/ErrorPage";
 
 const Route = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -37,16 +39,16 @@ const Route = createBrowserRouter([
       {
         path: "/jobcatagory/:id",
         element: <JobDetails></JobDetails>,
-        loader: ({params}) => fetch("http://localhost:5001/jobcatagory"),
+        loader: ({ params }) => fetch("http://localhost:5001/jobcatagory"),
       },
       {
-        path: '/my-bids',
-        element:<MyBids></MyBids>
+        path: "/my-bids",
+        element: <MyBids></MyBids>,
       },
       {
-        path: '/bid-request',
-        element:<BidRequest></BidRequest>
-      }
+        path: "/bid-request",
+        element: <BidRequest></BidRequest>,
+      },
     ],
   },
 ]);

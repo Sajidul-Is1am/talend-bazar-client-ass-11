@@ -19,7 +19,7 @@ const BrowesByCatagory = () => {
     return jobData;
   };
 
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ["jobCatagroy"],
     queryFn: jobItem,
   });
