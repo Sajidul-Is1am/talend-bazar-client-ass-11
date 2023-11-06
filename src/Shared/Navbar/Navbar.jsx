@@ -9,7 +9,7 @@ import './Navbar.css'
 
 const Navbar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const logOutSubmit = () => {
     handleLogOut()

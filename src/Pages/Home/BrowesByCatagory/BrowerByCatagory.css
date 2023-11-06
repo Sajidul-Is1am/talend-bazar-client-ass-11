@@ -1,0 +1,26 @@
+.bgImgWeb{
+    background: linear-gradient(rgba(74, 87, 92, 0.71), rgba(0, 0, 255, 0.669)),
+    url('https://i.ibb.co/sQM2sWS/10798281-19362653.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.bgImgDegital{
+    background: linear-gradient(rgba(75, 96, 104, 0.71), rgba(0, 0, 255, 0.669)),
+    url('https://i.ibb.co/84FkJdY/23987128-6859042.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.bgImgGraphoics{
+    background:linear-gradient(rgba(75, 103, 114, 0.71), rgba(0, 0, 255, 0.669)), url('https://i.ibb.co/XsxdDyq/7118028-3343973.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}

@@ -44,7 +44,7 @@ const Registration = () => {
               Registration!
             </h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-black text-white">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-black">
             <form onSubmit={hanldeSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -94,7 +94,7 @@ const Registration = () => {
                   required
                 />
                 <label className="label">
-                  <p className="text-base">
+                  <p className="text-white">
                     You have an Account Please yet ?
                     <Link to={"/login"} className="text-blue-600">
                       {" "}

@@ -56,7 +56,7 @@ const Login = () => {
               Login now
             </h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-black text-white">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-black ">
             <form onSubmit={handleLoginSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -82,14 +82,14 @@ const Login = () => {
                   required
                 />
                 <label className="label">
-                  <p className="text-base">
+                  <p className="text-white">
                     Dont have an Account yet?
                     <Link to={"/register"} className="text-blue-600">
                       Registration
                     </Link>
                   </p>
                 </label>
-                <div className="divider">Or</div>
+                <div className="divider text-white">Or</div>
                 <button
                   onClick={regisrationGoogle}
                   className="btn btn-outline btn-accent text-x"

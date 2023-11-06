@@ -1,26 +1,57 @@
+import { useContext, useState } from "react";
 import Navbar from "../../Shared/Navbar/Navbar";
+import axios from "axios";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddJob = () => {
+    // nagiation from this route on my job route
+    const navigate = useNavigate()
+    // this useState use for set catagory exact value
+    const [catagory, setCatagory] = useState(null)
+    
+    // user Info need for user email on set input feild get on AuthProivder
+    const { user } = useContext(AuthContext);
+    // console.log(user?.email)
+
+    // this function are selected catagory jobs
+    const handleCatagorySelect = event => {
+        const seletedCatagory = event.target.value;
+        setCatagory(seletedCatagory);
+    }
+
+
+    //  this is job info function
   const handleAddJob = (event) => {
     event.preventDefault();
     const form = event.target;
-    const image = form.image.value;
-    const name = form.name.value;
-    const brandname = form.brandname.value;
-    const category = form.category.value;
-    const description = form.description.value;
-    const price = form.price.value;
-    const rating = form.rating.value;
+      const email = form.email.value;
+      const jobtitle = form.jobtitle.value;
+      const deadline = form.deadline.value;
+      const minimumprcie = form.minimumprcie.value;
+      const maximumprice = form.maximumprice.value;
+      const description = form.description.value;
+
+      const jobInfo = { email, jobtitle, deadline, minimumprcie, maximumprice, description, catagory }
+      //   heating for post data on database this joninfo set on database that's why this feacthing
+      axios.post("http://localhost:5001/addjob", jobInfo)
+          .then(res => {
+              console.log(res.data);
+              if (res.data.insertedId) {
+                  toast.success("Successfully Create a Job Post!");
+                  form.reset();
+                  navigate("/my-posted-job");
+              }
+          })
+          .catch(error => {
+          console.log(error.message)
+        })
+      
+
   };
 
-  // Email of the employer(read-only)
-  // ● Job title
-  // ● Deadline
-  // ● Description
-  // ● Category-these are the names of tab options of the homepage(implement a
-  // dropdown for selecting category)
-  // ● Minimum price
-  // ● Maximum price
+ 
 
   return (
     <div className="bg-gray-400 h-auto">
@@ -35,44 +66,50 @@ const AddJob = () => {
           <form onSubmit={handleAddJob} className="p-10 border">
             <div className="grid justify-center gap-6 md:grid-cols-2 grid-cols-1 ">
               <input
+                defaultValue={user?.email}
                 type="text"
                 placeholder="Email"
                 name="email"
                 className="input input-bordered "
-                required
+                disabled
               />
               <input
                 type="text"
                 placeholder="Job Title"
-                name="job-title"
+                name="jobtitle"
                 className="input input-bordered "
                 required
               />
               <input
-                type="text"
+                type="date"
                 placeholder="Dead Line"
                 name="deadline"
                 className="input input-bordered "
                 required
               />
 
-              <select name="catagory" id="" placeholder="Select Catagory">
-                <option value="web">Select Catagory</option>
-                <option value="web">Web Development</option>
-                <option value="digital">Digital Marketing</option>
-                <option value="graphics">Graphics Design</option>
+              <select
+                name="catagory"
+                id=""
+                onChange={handleCatagorySelect}
+                placeholder="Select Catagory"
+              >
+                <option>Select Catagory</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Graphics Design">Graphics Design</option>
               </select>
               <input
                 type="text"
                 placeholder="Minimum Price"
-                name="minimum-prcie"
+                name="minimumprcie"
                 className="input input-bordered "
                 required
               />
               <input
                 type="text"
                 placeholder="Maximum Price"
-                name="maximum-price"
+                name="maximumprice"
                 className="input input-bordered"
                 required
               />
@@ -96,5 +133,4 @@ const AddJob = () => {
     </div>
   );
 };
-
 export default AddJob;

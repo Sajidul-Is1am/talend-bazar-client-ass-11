@@ -9,9 +9,9 @@ const Banner = () => {
       <div className="grid lg:grid-cols-2  items-center mx-10 md:mx-16 lg:mx-24 justify-between">
         {/* content part start */}
         <div className="lg:my-20 ">
-          <h1 className="lg:text-7xl md:text-5xl text-3xl font-semibold text-gray-300 font-playfair my-10 leading-tight">
-            Empowering Your Job Search{" "}
-            <span className="text-[#00d8ff]">or</span> Hiring Journey.
+          <h1 className="lg:text-7xl md:text-5xl text-3xl font-semibold text-gray-300 font-playfair my-10 leading-loose">
+            Empowering Your Job Search
+            <span className="text-[#00d8ff]"> or </span> Hiring Journey.
           </h1>
           <p className="text-sm text-gray-300 mb-8">
             Empower your job search or recruitment efforts with our versatile
