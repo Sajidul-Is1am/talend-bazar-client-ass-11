@@ -3,7 +3,7 @@ import { RxDot } from "react-icons/rx";
 const KnowledgeHub = () => {
   return (
     <div>
-      <h3 className="lg:text-5xl text-3xl text-center font-bold my-20">
+      <h3 className="lg:text-5xl text-3xl text-center font-bold lg:my-20 my-12 mt-20">
         Best Part Things
       </h3>
       {/* <p className=" text-justify">
@@ -14,22 +14,22 @@ const KnowledgeHub = () => {
         search engine visibility, and solidify our reputation as a reliable
         source of industry knowledge.
       </p> */}
-      <div className="mx-10 md:mx-16 lg:mx-24 ">
-        <div className="grid grid-cols-2 justify-between gap-14 bg-gray-100 rounded-t-2xl">
-          <div className="p-16 space-y-5">
+      <div className="md:mx-16 lg:mx-24 ">
+        <div className="grid lg:grid-cols-2 grid-cols-1 justify-between gap-14 bg-gray-100 rounded-t-2xl">
+          <div className="lg:p-16 p-10 space-y-5">
             <div className="flex items-center gap-4">
               <BsReverseListColumnsReverse></BsReverseListColumnsReverse>
-              <h4 className="text-4xl font-bold text-[#3071c0]">
+              <h4 className="lg:text-4xl text-xl font-bold text-[#3071c0]">
                 User-Friendly Job Posting :
               </h4>
             </div>
-            <div className="flex items-center gap-4 text-xl font-semibold">
+            <div className="flex items-center gap-4 text-base font-semibold">
               <RxDot></RxDot>
               <h4>
                 Easily post job circulars with a simple and intuitive interface.
               </h4>
             </div>
-            <div className="flex items-center gap-4 text-xl font-semibold">
+            <div className="flex items-center gap-4 text-base font-semibold">
               <RxDot></RxDot>
               <h4>
                 Streamlined process for job creation, with options for detailed
@@ -51,7 +51,7 @@ const KnowledgeHub = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 justify-between gap-14 bg-gray-100 rounded-b-2xl">
+        <div className="grid lg:grid-cols-2 grid-cols-1 justify-between gap-14 bg-gray-100 rounded-b-2xl">
           <div className=" order-first">
             <img
               src="https://i.ibb.co/K5FrmY8/0026204215-24612-removebg-preview.png"
@@ -59,21 +59,21 @@ const KnowledgeHub = () => {
               className="h-[500px] w-full "
             />
           </div>
-          <div className="p-16 space-y-5 order-first">
+          <div className="lg:p-16 p-10 space-y-5 order-first ">
             <div className="flex items-center gap-4">
               <BsReverseListColumnsReverse></BsReverseListColumnsReverse>
-              <h4 className="text-4xl font-bold text-[#3071c0]">
+              <h4 className="lg:text-4xl text-xl font-bold text-[#3071c0]">
                 Project Management Tools :
               </h4>
             </div>
-            <div className="flex items-center gap-4 text-xl font-semibold">
+            <div className="flex items-center gap-4 text-base font-semibold">
               <RxDot></RxDot>
               <h4>
                 Access tools to manage your projects, from job posting to
                 project completion.
               </h4>
             </div>
-            <div className="flex items-center gap-4 text-xl font-semibold">
+            <div className="flex items-center gap-4 text-base font-semibold">
               <RxDot></RxDot>
               <h4>Keep all project-related information in one place.</h4>
             </div>

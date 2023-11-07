@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "./BrowerByCatagory.css";
-import moment from "moment/moment";
+// import moment from "moment/moment";
 import { MdOutlineReadMore } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -40,22 +40,23 @@ const BrowesByCatagory = () => {
     <>
       <div className="grid grid-cols-3 gap-5 text-white font-bold">
         <Tab
-          className="bg-[#3280ee] p-4 rounded-lg"
+          className="bg-[#3280ee]  p-4  rounded-lg"
           onClick={() => setSelectedCatagory("Web Development")}
         >
-          Web Development
+          <p className="text-xs md:text-base">Web Development</p>
         </Tab>
         <Tab
           className="bg-[#3280ee] p-4 rounded-lg"
           onClick={() => setSelectedCatagory("Digital Marketing")}
         >
-          Digital Marketing
+          <p className="text-xs md:text-base">Digital Marketing</p>
         </Tab>
         <Tab
           className="bg-[#3280ee] p-4 rounded-lg"
           onClick={() => setSelectedCatagory("Graphics Design")}
         >
-          Graphics Design
+          
+          <p className="text-xs md:text-base">Graphics Design</p>
         </Tab>
       </div>
     </>
@@ -64,13 +65,13 @@ const BrowesByCatagory = () => {
   return (
     <div className="mx-10 md:mx-16 lg:mx-24">
       {/* heading start */}
-      <div className="my-20 grid justify-center">
+      <div className="lg:my-20 mt-56 mb-20 grid justify-center">
         <h3 className="lg:text-5xl text-3xl text-center font-bold">
           Browse By Category
         </h3>
       </div>
       {/* heading end */}
-      <div className="text-center mx-auto my-20">
+      <div className="text-center mx-auto lg:my-20">
         <Tabs>
           <TabList className={"grid justify-center mb-28"}>
             {/* <Tab>Title 1</Tab>
@@ -78,7 +79,7 @@ const BrowesByCatagory = () => {
             {tabTitle}
           </TabList>
 
-          <TabPanel className={"grid md:grid-cols-3 grid-cols-1 gap-6 "}>
+          <TabPanel className={"grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 "}>
             {filteringCatagory &&
               filteringCatagory.map((item) => (
                 <div key={item._id} className="">

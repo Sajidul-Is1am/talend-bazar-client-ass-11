@@ -23,7 +23,7 @@ const Banner = () => {
             Explore Opportunities <MdTravelExplore></MdTravelExplore>
           </button>
         </div>
-        <div className="flex justify-end">
+        <div className="flex lg:justify-end justify-center">
           <img
             src="https://i.ibb.co/Yf1jNcx/portrait-cheerful-young-man-smiling-pointing-finger-up-removebg-preview.png"
             alt=""

@@ -77,7 +77,7 @@ const Footer = () => {
         </footer>
       </div>
       <aside className="text-gray-200 flex justify-center bg-[#233141] py-5">
-        <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+        <p className="text-sm md:text-base">Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
       </aside>
     </div>
   );

@@ -60,12 +60,12 @@ const AddJob = () => {
         <Navbar></Navbar>
       </div>
       <div className="h-auto pb-10">
-        <div className="lg:mx-96 md:mx-16 mx-10 rounded-xl my-8 bg-gray-200">
-          <h3 className="font-bold text-center text-4xl py-10 text-[#3071c0]">
+        <div className="lg:mx-96 md:mx-16  rounded-xl my-8 bg-gray-200">
+          <h3 className="font-bold text-center mx-10 lg:text-4xl text-2xl py-10 text-[#3071c0]">
             Share a Job Opportunity
           </h3>
           <form onSubmit={handleAddJob} className="p-10 border">
-            <div className="grid justify-center gap-6 md:grid-cols-2 grid-cols-1 ">
+            <div className="grid justify-center gap-6 grid-cols-1 md:grid-cols-2 ">
               <input
                 defaultValue={user?.email}
                 type="text"

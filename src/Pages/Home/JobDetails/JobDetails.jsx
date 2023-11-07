@@ -65,24 +65,24 @@ const JobDetails = () => {
         <div className="mb-16">
           <div className="mockup-window border bg-base-300">
             <div className="flex flex-col justify-center px-4 py-16 bg-base-200 mx-auto">
-              <h3 className="text-5xl font-bold text-black text-center ">
+              <h3 className="lg:text-5xl md:text-3xl text-xl font-bold text-black text-center ">
                 {jobtitle}
               </h3>
               <div className="lg:mx-24 mt-10">
-                <h5 className="text-xl font-semibold mt-4 ml-4">
-                  <strong className="text-2xl text-[#3071c0]">
+                <h5 className="text-base font-semibold mt-4 ml-4">
+                  <strong className="text-xl text-[#3071c0]">
                     Dead Line :
                   </strong>{" "}
                   {deadline}
                 </h5>
-                <h5 className=" mt-4 ml-4 font-semibold text-xl">
-                  <strong className="text-2xl text-[#3071c0]">
+                <h5 className=" mt-4 ml-4 font-semibold text-base">
+                  <strong className="text-xl text-[#3071c0]">
                     Price Range:
                   </strong>{" "}
                   {minimumprcie}৳ - {maximumprice}৳
                 </h5>
-                <h5 className=" mt-4 ml-4 font-semibold text-xl max-w-[700px]">
-                  <strong className="text-2xl text-[#3071c0]">
+                <h5 className=" mt-4 ml-4 font-semibold text-base max-w-[700px]">
+                  <strong className="text-xl text-[#3071c0]">
                     Description:
                   </strong>{" "}
                   {description}
@@ -94,7 +94,7 @@ const JobDetails = () => {
         {/* last form */}
         <div>
           <div>
-            <h2 className="text-5xl font-bold text-center mb-10 capitalize text-[#3071c0]">
+            <h2 className="lg:text-5xl  text-3xl font-bold text-center mb-10 capitalize text-[#3071c0]">
               place your bid
             </h2>
           </div>
