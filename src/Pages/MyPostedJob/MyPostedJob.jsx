@@ -9,7 +9,7 @@ const MyPostedJob = () => {
       return jobData;
     };
 
-    const { data } = useQuery({
+    const { data ,refetch } = useQuery({
       queryKey: ["jobCatagroy"],
       queryFn: MyPostedData,
     });
@@ -19,9 +19,13 @@ const MyPostedJob = () => {
         <Navbar></Navbar>
       </div>
       {/* component heading start hear */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 my-24 mx-10 md:mx-16 lg:mx-24 ">
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 my-24 mx-10 md:mx-16 lg:mx-24">
         {data?.data.map((item) => (
-          <MypostedJobItem key={item?._id} item={item}></MypostedJobItem>
+          <MypostedJobItem
+            key={item?._id}
+            item={item}
+            refetch={refetch}
+          ></MypostedJobItem>
         ))}
       </div>
     </div>
@@ -29,3 +33,4 @@ const MyPostedJob = () => {
 };
 
 export default MyPostedJob;
+// 

@@ -1,9 +1,10 @@
 import { RxUpdate } from "react-icons/rx";
 import { MdDeleteSweep } from "react-icons/md";
 import { Link } from "react-router-dom";
-const MypostedJobItem = ({ item }) => {
-    const {
-      _id,
+import axios from "axios";
+const MypostedJobItem = ({ item, refetch }) => {
+  const {
+    _id,
     deadline,
     description,
     maximumprice,
@@ -12,9 +13,22 @@ const MypostedJobItem = ({ item }) => {
     email,
     catagory,
   } = item;
+
+  // delete item
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:5001/jobcatagory/delete/${id}`)
+      .then((res) => {
+          console.log(res.data);
+          refetch()
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <div>
-      <div className="card  bg-base-100 shadow-xl ">
+      <div className="card flex-1 flex-col  bg-base-100 shadow-xl ">
         <figure>
           <img
             src="https://i.ibb.co/gMNqBhQ/23306561-1911-i305-033-S-m005-c10-lawyer-compositions-01.jpg"
@@ -56,7 +70,7 @@ const MypostedJobItem = ({ item }) => {
                 Update<RxUpdate></RxUpdate>
               </div>
             </Link>
-            <Link>
+            <Link onClick={() => handleDelete(_id)}>
               <div className="btn btn-outline btn-primary">
                 Delete <MdDeleteSweep></MdDeleteSweep>
               </div>

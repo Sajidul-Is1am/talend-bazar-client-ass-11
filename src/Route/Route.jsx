@@ -15,7 +15,7 @@ const Route = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -52,8 +52,9 @@ const Route = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element:<MyPostupdate></MyPostupdate>
-      }
+        element: <MyPostupdate></MyPostupdate>,
+        loader: ({params}) => fetch("http://localhost:5001/jobcatagory"),
+      },
     ],
   },
 ]);
