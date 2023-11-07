@@ -2,6 +2,7 @@ import { RxUpdate } from "react-icons/rx";
 import { MdDeleteSweep } from "react-icons/md";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 const MypostedJobItem = ({ item, refetch }) => {
   const {
     _id,
@@ -16,15 +17,32 @@ const MypostedJobItem = ({ item, refetch }) => {
 
   // delete item
   const handleDelete = (id) => {
-    axios
-      .delete(`http://localhost:5001/jobcatagory/delete/${id}`)
-      .then((res) => {
-          console.log(res.data);
-          refetch()
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+        axios
+          .delete(`http://localhost:5001/jobcatagory/delete/${id}`)
+          .then((res) => {
+            console.log(res.data);
+            refetch();
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    });
   };
   return (
     <div>
@@ -36,7 +54,7 @@ const MypostedJobItem = ({ item, refetch }) => {
             className="h-[200px] w-full"
           />
         </figure>
-        <div className="card-body">
+        <div className="card-body h-[500px]">
           <h4 className="text-sm font-semibold">
             <span className="font-bold">Email : </span>
             {email}
