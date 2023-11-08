@@ -4,6 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AddJob = () => {
     // nagiation from this route on my job route
@@ -56,6 +57,11 @@ const AddJob = () => {
 
   return (
     <div className="bg-gray-400 h-auto">
+      <div>
+        <Helmet>
+          <title>TanlentBazaar || Add Job</title>
+        </Helmet>
+      </div>
       <div className="bg-[#3071c0]">
         <Navbar></Navbar>
       </div>

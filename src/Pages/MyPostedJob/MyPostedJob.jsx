@@ -4,6 +4,7 @@ import axios from "axios";
 import MypostedJobItem from "./MypostedJobItem/MypostedJobItem";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const MyPostedJob = () => {
   const {user} = useContext(AuthContext)
@@ -28,19 +29,24 @@ const MyPostedJob = () => {
   }
   return (
     <div className="bg-gray-200 pb-20">
+      <div>
+        <Helmet>
+          <title>TanlentBazaar || My Posted Job</title>
+        </Helmet>
+      </div>
       <div className="bg-[#3071c0]">
         <Navbar></Navbar>
       </div>
       {/* component heading start hear */}
       <div className=" grid grid-cols-1  lg:grid-cols-3 gap-16 my-24 mx-10 md:mx-16 lg:mx-24">
-        {SpacificUserJobPostFilter && 
+        {SpacificUserJobPostFilter &&
           SpacificUserJobPostFilter.map((item) => (
-          <MypostedJobItem
-            key={item?._id}
-            item={item}
-            refetch={refetch}
-          ></MypostedJobItem>
-        ))}
+            <MypostedJobItem
+              key={item?._id}
+              item={item}
+              refetch={refetch}
+            ></MypostedJobItem>
+          ))}
       </div>
     </div>
   );

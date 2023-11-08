@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import BidsItem from "./BidsItem/BidsItem";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const MyBids = () => {
     const { user } = useContext(AuthContext);
@@ -31,6 +32,11 @@ const MyBids = () => {
   }
     return (
       <div>
+        <div>
+          <Helmet>
+            <title>TanlentBazaar || My Bids</title>
+          </Helmet>
+        </div>
         <div className="bg-[#3071c0]">
           <Navbar></Navbar>
         </div>
@@ -39,11 +45,12 @@ const MyBids = () => {
             <table className="table">
               <thead>
                 <tr className="grid grid-cols-5 justify-between text-center bg-blue-200 font-bold text-base">
-                  <th>Name</th>
-                  <th>Job</th>
-                  <th>Favorite Color</th>
-                  <th>Favorite Color</th>
-                  <th>Favorite Color</th>
+                  <th>Title</th>
+                  <th>Email</th>
+
+                  <th>Dead Line</th>
+                  <th>Status</th>
+                  <th>Button</th>
                 </tr>
               </thead>
               <tbody>
