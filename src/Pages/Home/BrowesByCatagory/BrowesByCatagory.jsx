@@ -19,7 +19,7 @@ const BrowesByCatagory = () => {
     return jobData;
   };
 
-  const { data } = useQuery({
+  const { data ,isLoading} = useQuery({
     queryKey: ["jobCatagroy"],
     queryFn: jobItem,
   });
@@ -61,124 +61,139 @@ const BrowesByCatagory = () => {
       </div>
     </>
   );
-
-  return (
-    <div className="mx-10 md:mx-16 lg:mx-24">
-      {/* heading start */}
-      <div className="lg:my-20 mt-56 mb-20 grid justify-center">
-        <h3 className="lg:text-5xl text-3xl text-center font-bold">
-          Browse By Category
-        </h3>
-      </div>
-      {/* heading end */}
-      <div className="text-center mx-auto lg:my-20">
-        <Tabs>
-          <TabList className={"grid justify-center mb-28"}>
-            {/* <Tab>Title 1</Tab>
+  if (isLoading) {
+    return <span className="loading loading-dots loading-lg flex mx-auto"></span>;
+  }
+      return (
+        <div className="mx-10 md:mx-16 lg:mx-24">
+          {/* heading start */}
+          <div className="lg:my-20 mt-56 mb-20 grid justify-center">
+            <h3 className="lg:text-5xl text-3xl text-center font-bold">
+              Browse By Category
+            </h3>
+          </div>
+          {/* heading end */}
+          <div className="text-center mx-auto lg:my-20">
+            <Tabs>
+              <TabList className={"grid justify-center mb-28"}>
+                {/* <Tab>Title 1</Tab>
             <Tab>Title 2</Tab> */}
-            {tabTitle}
-          </TabList>
+                {tabTitle}
+              </TabList>
+            
+              <TabPanel
+                className={
+                  "grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 "
+                }
+              >
+                {filteringCatagory &&
+                  filteringCatagory.map((item) => (
+                    <div key={item._id} className="">
+                      <div className="card bgImgWeb bg-gray-400 text-white">
+                        <div className="card-body">
+                          {/* <p>Job Title</p> */}
+                          <h2 className="card-title text-4xl">
+                            {item.jobtitle}
+                          </h2>
+                          <p>
+                            <strong>Dead Line</strong> : {item.deadline}
+                          </p>
+                          <p>
+                            <strong>Price Range</strong> : {item.minimumprcie}৳
+                            -{item.maximumprice}৳
+                          </p>
+                          <p className="text-justify">
+                            <strong>Short Descripton </strong> :{" "}
+                            {item.description}
+                          </p>
 
-          <TabPanel className={"grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 "}>
-            {filteringCatagory &&
-              filteringCatagory.map((item) => (
-                <div key={item._id} className="">
-                  <div className="card bgImgWeb bg-gray-400 text-white">
-                    <div className="card-body">
-                      {/* <p>Job Title</p> */}
-                      <h2 className="card-title text-4xl">{item.jobtitle}</h2>
-                      <p>
-                        <strong>Dead Line</strong> : {item.deadline}
-                      </p>
-                      <p>
-                        <strong>Price Range</strong> : {item.minimumprcie}৳ -
-                        {item.maximumprice}৳
-                      </p>
-                      <p className="text-justify">
-                        <strong>Short Descripton </strong> : {item.description}
-                      </p>
-
-                      <div className="">
-                        <Link to={`/jobcatagory/${item?._id}`}>
-                          <button className="btn bg-[#00d8ff] border-none text-white hover:bg-[#ff9ec7]">
-                            Bid Now
-                            <MdOutlineReadMore></MdOutlineReadMore>
-                          </button>
-                        </Link>
+                          <div className="">
+                            <Link to={`/jobcatagory/${item?._id}`}>
+                              <button className="btn bg-[#00d8ff] border-none text-white hover:bg-[#ff9ec7]">
+                                Bid Now
+                                <MdOutlineReadMore></MdOutlineReadMore>
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-          </TabPanel>
-          <TabPanel className={"grid md:grid-cols-3 grid-cols-1 gap-6"}>
-            {filteringCatagory &&
-              filteringCatagory.map((item) => (
-                <div key={item._id} className="">
-                  <div className="card bgImgDegital bg-gray-400 text-white">
-                    <div className="card-body">
-                      {/* <p>Job Title</p> */}
-                      <h2 className="card-title text-4xl">{item.jobtitle}</h2>
-                      <p>
-                        <strong>Dead Line</strong> : {item.deadline}
-                      </p>
-                      <p>
-                        <strong>Price Range</strong> : {item.minimumprcie}৳ -
-                        {item.maximumprice}৳
-                      </p>
-                      <p className="text-justify">
-                        <strong>Short Descripton </strong> : {item.description}
-                      </p>
+                  ))}
+              </TabPanel>
+              <TabPanel className={"grid md:grid-cols-3 grid-cols-1 gap-6"}>
+                {filteringCatagory &&
+                  filteringCatagory.map((item) => (
+                    <div key={item._id} className="">
+                      <div className="card bgImgDegital bg-gray-400 text-white">
+                        <div className="card-body">
+                          {/* <p>Job Title</p> */}
+                          <h2 className="card-title text-4xl">
+                            {item.jobtitle}
+                          </h2>
+                          <p>
+                            <strong>Dead Line</strong> : {item.deadline}
+                          </p>
+                          <p>
+                            <strong>Price Range</strong> : {item.minimumprcie}৳
+                            -{item.maximumprice}৳
+                          </p>
+                          <p className="text-justify">
+                            <strong>Short Descripton </strong> :{" "}
+                            {item.description}
+                          </p>
 
-                      <div className="">
-                        <Link to={`/jobcatagory/${item?._id}`}>
-                          <button className="btn bg-[#00d8ff] border-none text-white hover:bg-[#ff9ec7]">
-                            Bid Now
-                            <MdOutlineReadMore></MdOutlineReadMore>
-                          </button>
-                        </Link>
+                          <div className="">
+                            <Link to={`/jobcatagory/${item?._id}`}>
+                              <button className="btn bg-[#00d8ff] border-none text-white hover:bg-[#ff9ec7]">
+                                Bid Now
+                                <MdOutlineReadMore></MdOutlineReadMore>
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-          </TabPanel>
-          <TabPanel className={"grid md:grid-cols-3 grid-cols-1 gap-6"}>
-            {filteringCatagory &&
-              filteringCatagory.map((item) => (
-                <div key={item._id} className="">
-                  <div className="card bgImgGraphoics bg-gray-400 text-white">
-                    <div className="card-body">
-                      {/* <p>Job Title</p> */}
-                      <h2 className="card-title text-4xl">{item.jobtitle}</h2>
-                      <p>
-                        <strong>Dead Line</strong> : {item.deadline}
-                      </p>
-                      <p>
-                        <strong>Price Range</strong> : {item.minimumprcie}৳ -
-                        {item.maximumprice}৳
-                      </p>
-                      <p className="text-justify">
-                        <strong>Short Descripton </strong> : {item.description}
-                      </p>
+                  ))}
+              </TabPanel>
+              <TabPanel className={"grid md:grid-cols-3 grid-cols-1 gap-6"}>
+                {filteringCatagory &&
+                  filteringCatagory.map((item) => (
+                    <div key={item._id} className="">
+                      <div className="card bgImgGraphoics bg-gray-400 text-white">
+                        <div className="card-body">
+                          {/* <p>Job Title</p> */}
+                          <h2 className="card-title text-4xl">
+                            {item.jobtitle}
+                          </h2>
+                          <p>
+                            <strong>Dead Line</strong> : {item.deadline}
+                          </p>
+                          <p>
+                            <strong>Price Range</strong> : {item.minimumprcie}৳
+                            -{item.maximumprice}৳
+                          </p>
+                          <p className="text-justify">
+                            <strong>Short Descripton </strong> :{" "}
+                            {item.description}
+                          </p>
 
-                      <div className="">
-                        <Link to={`/jobcatagory/${item?._id}`}>
-                          <button className="btn bg-[#00d8ff] border-none text-white hover:bg-[#ff9ec7]">
-                            Bid Now
-                            <MdOutlineReadMore></MdOutlineReadMore>
-                          </button>
-                        </Link>
+                          <div className="">
+                            <Link to={`/jobcatagory/${item?._id}`}>
+                              <button className="btn bg-[#00d8ff] border-none text-white hover:bg-[#ff9ec7]">
+                                Bid Now
+                                <MdOutlineReadMore></MdOutlineReadMore>
+                              </button>
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-          </TabPanel>
-        </Tabs>
-      </div>
-    </div>
-  );
+                  ))}
+              </TabPanel>
+            </Tabs>
+          </div>
+        </div>
+      );
 };
 
 export default BrowesByCatagory;
