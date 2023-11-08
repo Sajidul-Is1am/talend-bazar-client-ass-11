@@ -10,6 +10,7 @@ import MyBids from "../Pages/MyBids/MyBids";
 import BidRequest from "../Pages/BidRequest/BidRequest";
 import ErrorPage from "../Pages/Registration/ErrorPage";
 import MyPostupdate from "../Pages/MyPostupdate/MyPostupdate";
+import PrivetRoute from "./PrivetRoute";
 
 const Route = createBrowserRouter([
   {
@@ -31,29 +32,53 @@ const Route = createBrowserRouter([
       },
       {
         path: "/add-job",
-        element: <AddJob></AddJob>,
+        element: (
+          <PrivetRoute>
+            <AddJob></AddJob>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/my-posted-job",
-        element: <MyPostedJob></MyPostedJob>,
+        element: (
+          <PrivetRoute>
+            <MyPostedJob></MyPostedJob>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/jobcatagory/:id",
-        element: <JobDetails></JobDetails>,
+        element: (
+          <PrivetRoute>
+            <JobDetails></JobDetails>
+          </PrivetRoute>
+        ),
         loader: ({ params }) => fetch("http://localhost:5001/jobcatagory"),
       },
       {
         path: "/my-bids",
-        element: <MyBids></MyBids>,
+        element: (
+          <PrivetRoute>
+            <MyBids></MyBids>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/bid-request",
-        element: <BidRequest></BidRequest>,
+        element: (
+          <PrivetRoute>
+            <BidRequest></BidRequest>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/update/:id",
-        element: <MyPostupdate></MyPostupdate>,
-        loader: ({params}) => fetch("http://localhost:5001/jobcatagory"),
+        element: (
+          <PrivetRoute>
+            <MyPostupdate></MyPostupdate>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) => fetch("http://localhost:5001/jobcatagory"),
       },
     ],
   },
