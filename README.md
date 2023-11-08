@@ -1,6 +1,6 @@
 # React + Vite
 
-- Live Link : []() 
+- Live Link : [https://talendbazaar.web.app/](https://talendbazaar.web.app/) 
 
 
 

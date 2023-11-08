@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../../Firebase/Firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -54,8 +55,24 @@ const AuthProvider = ({ children }) => {
   // mannage user
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
+      // const userEmail = currentUser?.email || user?.email
+      // const logedUser = { email: userEmail };
       setUser(currentUser);
       setLoading(false)
+      // jwt tocken ==========================================================
+      // if (currentUser) {
+      //   axios
+      //     .post("https://talendbazaar-server.vercel.app/jwt", logedUser, { withCredentials: true })
+      //     .then((res) => {
+      //       console.log(res.data);
+      //     });
+      // }
+      // else {
+      //   axios.post("https://talendbazaar-server.vercel.app/logout", logedUser, { withCredentials: true })
+      //     .then(res => {
+      //     console.log(res.data);
+      //   })
+      // }
     });
   }, []);
 
