@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
-import './Navbar.css'
+import "./Navbar.css";
 
 const Navbar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
@@ -13,14 +13,14 @@ const Navbar = () => {
 
   const logOutSubmit = () => {
     handleLogOut()
-      .then(() => {
-        // console.log(res.user)
-        toast.success("Successfully LogOut!");
-      })
-      .catch((error) => {
-        // console.log(error.message)
-        toast.error(error.message);
-      });
+        .then(() => {
+          // console.log(res.user)
+          toast.success("Successfully LogOut!");
+        })
+        .catch((error) => {
+          // console.log(error.message)
+          toast.error(error.message);
+        });
   };
 
   const navlink = (
@@ -86,11 +86,19 @@ const Navbar = () => {
 
         <div className="">
           {user ? (
-            <NavLink to={"/login"}>
-              <button onClick={logOutSubmit} className="btn">
-                LogOut
-              </button>
-            </NavLink>
+            <div className="flex ">
+              <div className="flex lex-col items-center">
+                <div>
+                  <img className="w-10 h-10 rounded-full" src={user.photoURL} />
+                </div>
+                <p className="mx-2">{user.displayName}</p>
+              </div>
+              <NavLink to={"/login"}>
+                <button onClick={logOutSubmit} className="btn">
+                  LogOut
+                </button>
+              </NavLink>
+            </div>
           ) : (
             <NavLink to={"/login"}>
               <button className="btn">Login</button>
@@ -133,24 +141,7 @@ const Navbar = () => {
           </div>
         </div> */}
 
-        {/* ======================================== */}
-        {/* <div className=" hidden md:flex navbar-end font-bold">
-          {user ? (
-            <div className="flex items-center">
-              <div>
-                <img className="w-10 h-10 rounded-full" src={user.photoURL} />
-              </div>
-              <p className="mx-2">{user.displayName}</p>
-              <NavLink className={"btn"} onClick={logOutSubmit} to={"/login"}>
-                LogOut
-              </NavLink>
-            </div>
-          ) : (
-            <NavLink className={"btn"} to={"/login"}>
-              Login
-            </NavLink>
-          )}
-        </div> */}
+    
       </div>
     </div>
   );

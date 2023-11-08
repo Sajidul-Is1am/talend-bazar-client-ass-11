@@ -12,7 +12,7 @@ const MyPostedJob = () => {
       return jobData;
     };
 
-    const { data ,refetch } = useQuery({
+    const { data ,refetch,isLoading } = useQuery({
       queryKey: ["jobCatagroy"],
       queryFn: MyPostedData,
     });
@@ -21,6 +21,11 @@ const MyPostedJob = () => {
   );
   console.log(SpacificUserJobPostFilter);
   // console.log(user?.email);
+  if (isLoading) {
+    return <span className="loading loading-dots loading-lg text-7xl flex mx-auto justify-center items-center h-screen">
+      Loading
+    </span>;
+  }
   return (
     <div className="bg-gray-200 pb-20">
       <div className="bg-[#3071c0]">
