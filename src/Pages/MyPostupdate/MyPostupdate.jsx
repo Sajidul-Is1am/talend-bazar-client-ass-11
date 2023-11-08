@@ -70,7 +70,7 @@ const MyPostupdate = () => {
                   type="text"
                   placeholder="Email"
                   name="email"
-                  className="input input-bordered "
+                  className="input input-bordered  col-span-2 md:col-span-1"
                   defaultValue={email}
                   disabled
                 />
@@ -78,7 +78,7 @@ const MyPostupdate = () => {
                   type="text"
                   placeholder="Job Title"
                   name="jobtitle"
-                  className="input input-bordered "
+                  className="input input-bordered  col-span-2 md:col-span-1"
                   defaultValue={jobtitle}
                   required
                 />
@@ -86,7 +86,7 @@ const MyPostupdate = () => {
                   type="date"
                   placeholder="Dead Line"
                   name="deadline"
-                  className="input input-bordered "
+                  className="input input-bordered  col-span-2 md:col-span-1"
                   defaultValue={deadline}
                   required
                 />
@@ -96,6 +96,7 @@ const MyPostupdate = () => {
                   name="catagory"
                   id=""
                   placeholder="Select Catagory"
+                  className="col-span-2 md:col-span-1 input input-bordered"
                 >
                   <option>Select Catagory</option>
                   <option value="Web Development">Web Development</option>
@@ -106,7 +107,7 @@ const MyPostupdate = () => {
                   type="text"
                   placeholder="Minimum Price"
                   name="minimumprcie"
-                  className="input input-bordered "
+                  className="input input-bordered  col-span-2 md:col-span-1"
                   defaultValue={minimumprcie}
                   required
                 />
@@ -114,7 +115,7 @@ const MyPostupdate = () => {
                   type="text"
                   placeholder="Maximum Price"
                   name="maximumprice"
-                  className="input input-bordered"
+                  className="input input-bordered col-span-2 md:col-span-1"
                   defaultValue={maximumprice}
                   required
                 />
@@ -122,7 +123,7 @@ const MyPostupdate = () => {
                   type="text"
                   placeholder="Description"
                   name="description"
-                  className="input input-bordered h-[180px] col-span-2 p-4"
+                  className="input input-bordered h-[180px] col-span-2 p-4 "
                   defaultValue={description}
                   required
                 />

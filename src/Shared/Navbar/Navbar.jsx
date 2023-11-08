@@ -25,7 +25,7 @@ const Navbar = () => {
 
   const navlink = (
     <>
-      <div className="lg:flex lg:flex-row lg:gap-10 gap-y-4 grid py-4 font-semibold">
+      <div className="lg:flex lg:flex-row lg:gap-10 gap-y-4 grid py-4 font-semibold ">
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
@@ -75,14 +75,15 @@ const Navbar = () => {
               {navlink}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl font-bold text-white">
+          <a className="btn btn-ghost normal-case text-xl font-bold text-white ">
             <img src="https://i.ibb.co/QnKWGMN/logo-white-small.png" alt="" />
-            TalentBazaar.com
+            <span className="lg:flex hidden">TalentBazaar.com</span>
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center  hidden lg:flex">
           <ul className="menu-horizontal px-1">{navlink}</ul>
         </div>
+
         <div className="">
           {user ? (
             <NavLink to={"/login"}>
@@ -96,6 +97,60 @@ const Navbar = () => {
             </NavLink>
           )}
         </div>
+        {/* ======================================== */}
+        {/* <div className="navbar-end text-end">
+          <div className="dropdown ">
+            <label tabIndex={0} className="btn btn-ghost md:hidden">
+              {user ? (
+                <img className="w-10 h-10 rounded-full" src={user.photoURL} />
+              ) : (
+                <NavLink className={"btn"} to={"/login"}>
+                  Login
+                </NavLink>
+              )}
+            </label>
+            {user && (
+              <ul
+                tabIndex={0}
+                className="menu-sm dropdown-content mt-8  z-[1] p-4 shadow bg-[#08213e] border  w-36 text-center -ml-10"
+              >
+                {user ? (
+                  <>
+                    <p className="mx-2 mb-4">{user.displayName}</p>
+                    <NavLink
+                      className={"p-4 text-red-500"}
+                      onClick={logOutSubmit}
+                      to={"/login"}
+                    >
+                      LogOut
+                    </NavLink>
+                  </>
+                ) : (
+                  ""
+                )}
+              </ul>
+            )}
+          </div>
+        </div> */}
+
+        {/* ======================================== */}
+        {/* <div className=" hidden md:flex navbar-end font-bold">
+          {user ? (
+            <div className="flex items-center">
+              <div>
+                <img className="w-10 h-10 rounded-full" src={user.photoURL} />
+              </div>
+              <p className="mx-2">{user.displayName}</p>
+              <NavLink className={"btn"} onClick={logOutSubmit} to={"/login"}>
+                LogOut
+              </NavLink>
+            </div>
+          ) : (
+            <NavLink className={"btn"} to={"/login"}>
+              Login
+            </NavLink>
+          )}
+        </div> */}
       </div>
     </div>
   );

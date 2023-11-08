@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../../Firebase/Firebase.config";
@@ -42,7 +43,13 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
     });
   }, []);
-
+  // update profile
+  const handleUpdate = (userName, imglink) => {
+    return updateProfile(auth.currentUser, {
+      displayName: userName,
+      photoURL: imglink,
+    });
+  };
   //==============================================================================
 
   const userInfo = {
@@ -50,6 +57,7 @@ const AuthProvider = ({ children }) => {
     handleRegistraionInGoogle,
     handleLogin,
     handleLogOut,
+    handleUpdate,
     user,
   };
 

@@ -71,21 +71,21 @@ const AddJob = () => {
                 type="text"
                 placeholder="Email"
                 name="email"
-                className="input input-bordered "
+                className="input input-bordered col-span-2 md:col-span-1"
                 disabled
               />
               <input
                 type="text"
                 placeholder="Job Title"
                 name="jobtitle"
-                className="input input-bordered "
+                className="input input-bordered col-span-2 md:col-span-1"
                 required
               />
               <input
                 type="date"
                 placeholder="Dead Line"
                 name="deadline"
-                className="input input-bordered "
+                className="input input-bordered col-span-2 md:col-span-1"
                 required
               />
 
@@ -94,6 +94,7 @@ const AddJob = () => {
                 id=""
                 onChange={handleCatagorySelect}
                 placeholder="Select Catagory"
+                className="col-span-2 md:col-span-1 input input-bordered"
               >
                 <option>Select Catagory</option>
                 <option value="Web Development">Web Development</option>
@@ -104,14 +105,14 @@ const AddJob = () => {
                 type="text"
                 placeholder="Minimum Price"
                 name="minimumprcie"
-                className="input input-bordered "
+                className="input input-bordered col-span-2 md:col-span-1"
                 required
               />
               <input
                 type="text"
                 placeholder="Maximum Price"
                 name="maximumprice"
-                className="input input-bordered"
+                className="input input-bordered col-span-2 md:col-span-1"
                 required
               />
               <textarea

@@ -51,7 +51,7 @@ const MypostedJobItem = ({ item, refetch }) => {
           <img
             src="https://i.ibb.co/gMNqBhQ/23306561-1911-i305-033-S-m005-c10-lawyer-compositions-01.jpg"
             alt="jobs"
-            className="h-[200px] w-full"
+            className="h-[200px] w-full md:h-[250px]"
           />
         </figure>
         <div className="card-body h-[500px]">

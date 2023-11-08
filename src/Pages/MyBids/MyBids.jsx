@@ -1,17 +1,21 @@
 import axios from "axios";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { useQuery } from "@tanstack/react-query";
+import BidsItem from "./BidsItem/BidsItem";
 
 const MyBids = () => {
-  const BidsItem = async () => {
+  const BidCollection = async () => {
     const jobData = await axios.get("http://localhost:5001/my-selected-bids");
     return jobData;
   };
 
-  const { data } = useQuery({
-    queryKey: ["jobCatagroy"],
-    queryFn: BidsItem,
+  const { data, isLoading } = useQuery({
+    queryKey: ["bidItems"],
+    queryFn: BidCollection,
   });
+
+  
+  console.log(data?.data);
 
 
   return (
@@ -20,9 +24,10 @@ const MyBids = () => {
         <Navbar></Navbar>
       </div>
       <div>
-        {data?.data.map((bidsItem) => (
-          <BidsItem key={bidsItem?._id} bidsItems={bidsItem}></BidsItem>
-        ))}
+        {
+          data?.data && 
+          data?.data.map(item => <BidsItem key={item._id} items={item}></BidsItem>)
+        }
       </div>
     </div>
   );

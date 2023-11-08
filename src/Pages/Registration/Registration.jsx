@@ -5,9 +5,9 @@ import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import Navbar from "../../Shared/Navbar/Navbar";
 const Registration = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const { handleRegistraion } = useContext(AuthContext);
+  const { handleRegistraion, handleUpdate } = useContext(AuthContext);
 
   const hanldeSubmit = (event) => {
     event.preventDefault();
@@ -16,20 +16,18 @@ const Registration = () => {
     const imglink = form.imglink.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(userName, email, password, imglink);
 
     // registration with email and password
-    handleRegistraion(email, password)
-      .then((res) => {
+    handleRegistraion(email, password).then((res) => {
+      handleUpdate(userName, imglink).then(() => {
         console.log(res.user);
         toast.success("Successfully Registared!");
-        navigate('/')
-      })
-      .catch((error) => {
-        // console.log(error.message);
-        toast.error(error.message);
+        navigate("/").catch((error) => {
+          // console.log(error.message);
+          toast.error(error.message);
+        });
       });
-    
+    });
   };
 
   return (
