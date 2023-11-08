@@ -33,7 +33,7 @@ const MypostedJobItem = ({ item, refetch }) => {
           icon: "success",
         });
         axios
-          .delete(`http://localhost:5001/jobcatagory/delete/${id}`)
+          .delete(`https://talendbazaar-server.vercel.app/jobcatagory/delete/${id}`)
           .then((res) => {
             console.log(res.data);
             refetch();

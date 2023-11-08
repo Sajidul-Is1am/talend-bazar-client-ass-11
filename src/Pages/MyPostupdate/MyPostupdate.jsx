@@ -43,7 +43,7 @@ const MyPostupdate = () => {
               catagory,
         };
         // console.log(jobInfo);
-        axios.put(`http://localhost:5001/jobcatagory/update/${_id}`, jobInfo)
+        axios.put(`https://talendbazaar-server.vercel.app/jobcatagory/update/${_id}`, jobInfo)
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {

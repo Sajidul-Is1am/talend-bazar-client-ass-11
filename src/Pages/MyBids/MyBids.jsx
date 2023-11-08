@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 const MyBids = () => {
     const { user } = useContext(AuthContext);
   const BidCollection = async () => {
-    const jobData = await axios.get("http://localhost:5001/my-selected-bids");
+    const jobData = await axios.get("https://talendbazaar-server.vercel.app/my-selected-bids");
     return jobData;
   };
 

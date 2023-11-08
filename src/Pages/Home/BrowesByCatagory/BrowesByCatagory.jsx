@@ -15,7 +15,7 @@ const BrowesByCatagory = () => {
 
   // data load form add job post on database useing tanstack query
   const jobItem = async () => {
-    const jobData = await axios.get("http://localhost:5001/jobcatagory");
+    const jobData = await axios.get("https://talendbazaar-server.vercel.app/jobcatagory");
     return jobData;
   };
 

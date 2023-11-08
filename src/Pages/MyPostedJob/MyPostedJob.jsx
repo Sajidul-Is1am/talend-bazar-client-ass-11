@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 const MyPostedJob = () => {
   const {user} = useContext(AuthContext)
     const MyPostedData = async () => {
-      const jobData = await axios.get("http://localhost:5001/jobcatagory");
+      const jobData = await axios.get("https://talendbazaar-server.vercel.app/jobcatagory");
       return jobData;
     };
 

@@ -53,7 +53,7 @@ const Route = createBrowserRouter([
             <JobDetails></JobDetails>
           </PrivetRoute>
         ),
-        loader: ({ params }) => fetch("http://localhost:5001/jobcatagory"),
+        loader: ({ params }) => fetch("https://talendbazaar-server.vercel.app/jobcatagory"),
       },
       {
         path: "/my-bids",
@@ -78,7 +78,7 @@ const Route = createBrowserRouter([
             <MyPostupdate></MyPostupdate>
           </PrivetRoute>
         ),
-        loader: ({ params }) => fetch("http://localhost:5001/jobcatagory"),
+        loader: ({ params }) => fetch("https://talendbazaar-server.vercel.app/jobcatagory"),
       },
     ],
   },

@@ -37,7 +37,7 @@ const AddJob = () => {
     const jobInfo = { email, jobtitle, deadline, minimumprcie, maximumprice, description, catagory }
     console.log(jobInfo);
       //   heating for post data on database this joninfo set on database that's why this feacthing
-      axios.post("http://localhost:5001/addjob", jobInfo)
+      axios.post("https://talendbazaar-server.vercel.app/addjob", jobInfo)
           .then(res => {
               console.log(res.data);
               if (res.data.insertedId) {

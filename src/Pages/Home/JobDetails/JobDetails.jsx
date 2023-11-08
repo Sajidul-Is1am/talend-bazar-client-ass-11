@@ -40,7 +40,7 @@ const JobDetails = () => {
     const biddsInfo = { beddingprice, beadingmail, deadline, owneremail,jobtitle };
 
     axios
-      .post("http://localhost:5001/my-selected-bids", biddsInfo)
+      .post("https://talendbazaar-server.vercel.app/my-selected-bids", biddsInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

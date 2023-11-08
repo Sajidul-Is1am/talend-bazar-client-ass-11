@@ -6,7 +6,7 @@ import BidReqItem from "./BidReqItem/BidReqItem";
 
 const BidRequest = () => {
   const RequestCollection = async () => {
-    const bidItem = await axios.get("http://localhost:5001/my-selected-bids");
+    const bidItem = await axios.get("https://talendbazaar-server.vercel.app/my-selected-bids");
     return bidItem;
   };
 
